@@ -107,7 +107,7 @@ export default function NewPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-blue-100 selection:text-[#0d6efd]">
+    <div className="min-h-screen -mt-60 bg-white font-sans text-slate-800 selection:bg-blue-100 selection:text-[#0d6efd]">
       {/* Full Screen Width Main Container */}
       <main className="w-full px-4 sm:px-8 lg:px-12 py-10 space-y-24">
 

@@ -69,20 +69,20 @@ const About = () => {
   }, []);
 
   return (
-    <main className="bg-white min-h-screen -mt-65 text-slate-900 font-sans px-6 py-16">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <main className="bg-white min-h-screen lg:-mt-65 mt-25 text-slate-900 font-sans px-4 sm:px-6 py-12 lg:py-16">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Left Side: Title */}
         <div>
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-slate-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-slate-900 mb-4 text-center lg:text-left">
             From Everyday Rides to Meaningful Journeys
           </h1>
         </div>
 
         {/* Right Side: Staggered Layout */}
         <div ref={sectionRef} className="flex flex-col space-y-4 relative z-0">
-          {/* Dashed Curved Line */}
+          {/* Dashed Curved Line - Visible on all screens now */}
           <svg
-            className="absolute inset-0 w-full h-full -z-10 pointer-events-none hidden lg:block"
+            className="absolute inset-0 w-full h-full -z-10 pointer-events-none block"
             viewBox="0 0 500 650"
             fill="none"
             preserveAspectRatio="none"
@@ -119,12 +119,12 @@ const About = () => {
           </svg>
 
           {stats.map((stat, index) => {
-            // Apply different margin-left to create the zig-zag / staircase flow
+            // Maintains desktop zig-zag layout flow while scaling down widths and margins smoothly on mobile/tablet
             const marginClasses = [
-              'ml-auto mr-0 w-64',     // Card 1: Far Right
-              'ml-0 mr-auto w-64',     // Card 2: Far Left
-              'mx-auto w-64',          // Card 3: Middle
-              'ml-auto mr-12 w-64',    // Card 4: Bottom Right
+              'ml-auto mr-0 w-52 sm:w-64',    // Card 1: Far Right
+              'ml-0 mr-auto w-52 sm:w-64',    // Card 2: Far Left
+              'mx-auto w-52 sm:w-64',         // Card 3: Middle
+              'ml-auto mr-8 sm:mr-12 w-52 sm:w-64', // Card 4: Bottom Right
             ];
 
             return (
@@ -133,12 +133,12 @@ const About = () => {
                 ref={(el) => {
                   cardRefs.current[index] = el;
                 }}
-                className={`p-6 bg-blue-600 rounded-2xl shadow-md text-center text-white relative z-10 ${marginClasses[index]}`}
+                className={`p-4 sm:p-6 bg-blue-600 rounded-2xl shadow-md text-center text-white relative z-10 ${marginClasses[index]}`}
               >
-                <span className="block text-2xl md:text-3xl font-bold">
+                <span className="block text-xl sm:text-2xl md:text-3xl font-bold">
                   {stat.value}
                 </span>
-                <span className="block text-sm text-blue-100 mt-1">
+                <span className="block text-xs sm:text-sm text-blue-100 mt-1">
                   {stat.label}
                 </span>
               </div>

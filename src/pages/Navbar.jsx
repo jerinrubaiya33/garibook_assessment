@@ -66,9 +66,8 @@ export default function Navbar() {
   return (
     <header
       style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-      className={`fixed top-0 left-0 right-0 w-full z-50 bg-white transition-all duration-300 ease-out ${
-        isScrolled ? 'py-4 backdrop-blur-md bg-white shadow-xs' : 'py-6'
-      }`}
+      className={`fixed top-0 left-0 right-0 w-full z-50 bg-white transition-all duration-300 ease-out ${isScrolled ? 'py-4 backdrop-blur-md bg-white shadow-xs' : 'py-6'
+        }`}
     >
       <div className="w-full max-w-[1536px]  mx-auto px-5 sm:px-7 xl:px-8 flex items-center justify-between flex-nowrap gap-5 xl:gap-7">
 
@@ -85,18 +84,16 @@ export default function Navbar() {
                 key={label}
                 href={href}
                 onClick={() => handleLinkClick(label)}
-                className={`relative group px-3 2xl:px-4 py-4 text-lg 2xl:text-lg whitespace-nowrap shrink-0 transition-colors duration-200 text-white flex flex-col items-center justify-center ${
-                  isActive ? 'font-normal' : 'font-semibold hover:text-white/90'
-                }`}
+                className={`relative group px-3 2xl:px-4 py-4 text-lg 2xl:text-lg whitespace-nowrap shrink-0 transition-colors duration-200 text-white flex flex-col items-center justify-center ${isActive ? 'font-normal' : 'font-semibold hover:text-white/90'
+                  }`}
               >
                 <span>{label}</span>
 
                 <svg
-                  className={`absolute bottom-0 w-3/4 h-2 pointer-events-none transition-all duration-300 ease-out origin-center ${
-                    isActive
+                  className={`absolute bottom-0 w-3/4 h-2 pointer-events-none transition-all duration-300 ease-out origin-center ${isActive
                       ? 'opacity-100 scale-x-100'
                       : 'opacity-0 scale-x-50 group-hover:opacity-100 group-hover:scale-x-100'
-                  }`}
+                    }`}
                   viewBox="0 0 100 15"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -138,73 +135,69 @@ export default function Navbar() {
           </button>
 
           {/* Language Dropdown */}
-<div className="relative shrink-0">
-  <button
-    type="button"
-    onClick={() => setIsLangOpen(!isLangOpen)}
-    className="relative text-slate-800 hover:text-[#0d6efd] font-semibold text-base 2xl:text-lg flex items-center gap-2 py-1 transition-colors duration-200 group"
-  >
-    <Languages size={20} className="text-[#0d6efd] transition-transform duration-300 group-hover:scale-110" />
-    <span>{selectedLang}</span>
-    <ChevronDown
-      size={18}
-      className={`transition-transform duration-300 text-[#0d6efd] ${
-        isLangOpen ? 'rotate-180' : ''
-      }`}
-    />
-    <span
-      className={`absolute bottom-0 left-0 w-full h-[2.5px] bg-[#0d6efd] origin-left transition-transform duration-300 ease-out rounded-full ${
-        isLangOpen ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-      }`}
-    />
-  </button>
+          <div className="relative shrink-0">
+            <button
+              type="button"
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              className="relative text-slate-800 hover:text-[#0d6efd] font-semibold text-base 2xl:text-lg flex items-center gap-2 py-1 transition-colors duration-200 group"
+            >
+              <Languages size={20} className="text-[#0d6efd] transition-transform duration-300 group-hover:scale-110" />
+              <span>{selectedLang}</span>
+              <ChevronDown
+                size={18}
+                className={`transition-transform duration-300 text-[#0d6efd] ${isLangOpen ? 'rotate-180' : ''
+                  }`}
+              />
+              <span
+                className={`absolute bottom-0 left-0 w-full h-[2.5px] bg-[#0d6efd] origin-left transition-transform duration-300 ease-out rounded-full ${isLangOpen ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
+              />
+            </button>
 
-  {isLangOpen && (
-    <div className="absolute right-0 mt-2.5 w-40 bg-white border border-slate-200/80 rounded-xl shadow-xl py-1.5 z-50 overflow-hidden transform transition-all duration-200 animate-in fade-in slide-in-from-top-2">
-      <button
-        type="button"
-        onClick={() => handleLanguageSelect('English')}
-        className={`w-full flex items-center justify-between px-4 py-2.5 text-base font-semibold transition-colors ${
-          selectedLang === 'English'
-            ? 'text-[#0d6efd] bg-blue-50/80'
-            : 'text-slate-700 hover:bg-slate-50'
-        }`}
-      >
-        <div className="flex items-center gap-2.5">
-          <span className="text-xs font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">
-            EN
-          </span>
-          <span>English</span>
-        </div>
-        {selectedLang === 'English' && <Check size={16} className="text-[#0d6efd]" />}
-      </button>
+            {isLangOpen && (
+              <div className="absolute right-0 mt-2.5 w-40 bg-white border border-slate-200/80 rounded-xl shadow-xl py-1.5 z-50 overflow-hidden transform transition-all duration-200 animate-in fade-in slide-in-from-top-2">
+                <button
+                  type="button"
+                  onClick={() => handleLanguageSelect('English')}
+                  className={`w-full flex items-center justify-between px-4 py-2.5 text-base font-semibold transition-colors ${selectedLang === 'English'
+                      ? 'text-[#0d6efd] bg-blue-50/80'
+                      : 'text-slate-700 hover:bg-slate-50'
+                    }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-xs font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">
+                      EN
+                    </span>
+                    <span>English</span>
+                  </div>
+                  {selectedLang === 'English' && <Check size={16} className="text-[#0d6efd]" />}
+                </button>
 
-      <button
-        type="button"
-        onClick={() => handleLanguageSelect('বাংলা')}
-        className={`w-full flex items-center justify-between px-4 py-2.5 text-base font-semibold transition-colors ${
-          selectedLang === 'বাংলা'
-            ? 'text-[#0d6efd] bg-blue-50/80'
-            : 'text-slate-700 hover:bg-slate-50'
-        }`}
-      >
-        <div className="flex items-center gap-2.5">
-          <span className="text-xs font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
-            BN
-          </span>
-          <span>বাংলা</span>
-        </div>
-        {selectedLang === 'বাংলা' && <Check size={16} className="text-[#0d6efd]" />}
-      </button>
-    </div>
-  )}
-</div>
+                <button
+                  type="button"
+                  onClick={() => handleLanguageSelect('বাংলা')}
+                  className={`w-full flex items-center justify-between px-4 py-2.5 text-base font-semibold transition-colors ${selectedLang === 'বাংলা'
+                      ? 'text-[#0d6efd] bg-blue-50/80'
+                      : 'text-slate-700 hover:bg-slate-50'
+                    }`}
+                >
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-xs font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      BN
+                    </span>
+                    <span>বাংলা</span>
+                  </div>
+                  {selectedLang === 'বাংলা' && <Check size={16} className="text-[#0d6efd]" />}
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile / Tablet Hamburger Toggle */}
         <button
           type="button"
-          className="xl:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100/80 transition-colors shrink-0"
+          className="xl:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100/80 transition-colors shrink-0 mr-15"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -218,28 +211,27 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="xl:hidden bg-white/95 backdrop-blur-md border-b border-slate-200 px-7 py-5 space-y-4 shadow-xl mt-3.5 animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="xl:hidden bg-white/95 backdrop-blur-md -ml-5 border-b border-slate-200 px-7 py-5 space-y-4 shadow-xl mt-3.5 animate-in fade-in slide-in-from-top-4 duration-300">
           <div className="flex flex-col gap-1.5">
             {NAV_LINKS.map(({ label, href }) => (
               <a
                 key={label}
                 href={href}
                 onClick={() => handleLinkClick(label)}
-                className={`px-4.5 py-3 rounded-lg text-lg font-semibold whitespace-nowrap transition-colors ${
-                  activeLink === label
+                className={`px-4.5 py-3 rounded-lg text-lg font-semibold whitespace-nowrap transition-colors ${activeLink === label
                     ? 'bg-[#0d6efd] text-white'
                     : 'text-slate-800 hover:bg-slate-100'
-                }`}
+                  }`}
               >
                 {label}
               </a>
             ))}
           </div>
-
-          <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
+          <div className="pt-4 px-10 -ml-8 border-t border-slate-100 flex flex-col gap-3">
             <button
               type="button"
-              className="w-full py-3 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold text-lg rounded-xl shadow-xs flex items-center justify-center gap-2 active:scale-98 transition-transform"
+              className="w-full py-3 bg-[#fdd300] hover:bg-amber-500 text-slate-900 font-bold text-lg rounded-xl
+              shadow-xs flex items-center justify-center gap-2 active:scale-98 transition-transform"
             >
               <Download size={20} className="stroke-[2.5]" />
               <span>Download App</span>
@@ -253,23 +245,22 @@ export default function Navbar() {
             <div className="flex rounded-lg overflow-hidden border border-slate-200 p-1 bg-slate-50">
               <button
                 type="button"
-                onClick={() => handleLanguageSelect('English')}
-                className={`flex-1 py-2.5 text-center font-semibold text-base rounded-md transition-all ${
-                  selectedLang === 'English'
-                    ? 'bg-[#0d6efd] text-white shadow-xs'
-                    : 'text-slate-600'
-                }`}
+                onClick={() => handleLanguageSelect("English")}
+                className={`flex-1 py-2.5 text-center font-semibold text-base rounded-md transition-all ${selectedLang === "English"
+                    ? "bg-[#0d6efd] text-white shadow-xs"
+                    : "text-slate-600"
+                  }`}
               >
                 English
               </button>
+
               <button
                 type="button"
-                onClick={() => handleLanguageSelect('বাংলা')}
-                className={`flex-1 py-2.5 text-center font-semibold text-base rounded-md transition-all ${
-                  selectedLang === 'বাংলা'
-                    ? 'bg-[#0d6efd] text-white shadow-xs'
-                    : 'text-slate-600'
-                }`}
+                onClick={() => handleLanguageSelect("বাংলা")}
+                className={`flex-1 py-2.5 text-center font-semibold text-base rounded-md transition-all ${selectedLang === "বাংলা"
+                    ? "bg-[#0d6efd] text-white shadow-xs"
+                    : "text-slate-600"
+                  }`}
               >
                 বাংলা
               </button>

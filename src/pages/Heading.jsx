@@ -63,7 +63,7 @@ const Heading = () => {
             <section className="max-w-6xl mx-auto px-6 pb-20">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
                     {features.map((feature) => (
-                        <div key={feature.id} className="group flex flex-col items-start space-y-3">
+                        <div key={feature.id} className="group flex flex-col items-center md:items-start text-center md:text-left space-y-3">
                             <div className="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 transition-transform duration-300 group-hover:scale-105 mb-2">
                                 <img
                                     src={feature.image}
