@@ -1,4 +1,3 @@
-import './App.css'
 import Landing from './pages/Landing.jsx'
 import Navbar from './pages/Navbar.jsx'
 import "./index.css";
